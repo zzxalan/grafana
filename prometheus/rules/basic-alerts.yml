@@ -1,0 +1,104 @@
+groups:
+  - name: basic-alerts
+    rules:
+      # Prometheus 服务状态告警
+      - alert: PrometheusDown
+        expr: up{job="prometheus"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Prometheus 服务下线"
+          description: "Prometheus 实例 {{ $labels.instance }} 已经下线超过 1 分钟"
+
+      # Node Exporter 状态告警
+      - alert: NodeExporterDown
+        expr: up{job="node-exporter"} == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Node Exporter 服务下线"
+          description: "Node Exporter 实例 {{ $labels.instance }} 已经下线超过 1 分钟"
+
+      # CPU 使用率告警
+      - alert: HighCpuUsage
+        expr: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "CPU 使用率过高"
+          description: "主机 {{ $labels.instance }} 的 CPU 使用率超过 80%，当前值: {{ $value }}%"
+
+      # 内存使用率告警
+      - alert: HighMemoryUsage
+        expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "内存使用率过高"
+          description: "主机 {{ $labels.instance }} 的内存使用率超过 85%，当前值: {{ $value }}%"
+
+      # 磁盘使用率告警
+      - alert: HighDiskUsage
+        expr: (1 - (node_filesystem_avail_bytes{fstype!="tmpfs"} / node_filesystem_size_bytes{fstype!="tmpfs"})) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "磁盘使用率过高"
+          description: "主机 {{ $labels.instance }} 的磁盘 {{ $labels.mountpoint }} 使用率超过 85%，当前值: {{ $value }}%"
+
+      # 磁盘空间严重不足告警
+      - alert: DiskSpaceCritical
+        expr: (1 - (node_filesystem_avail_bytes{fstype!="tmpfs"} / node_filesystem_size_bytes{fstype!="tmpfs"})) * 100 > 95
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "磁盘空间严重不足"
+          description: "主机 {{ $labels.instance }} 的磁盘 {{ $labels.mountpoint }} 使用率超过 95%，当前值: {{ $value }}%"
+
+  - name: service-alerts
+    rules:
+      # MySQL Exporter 状态告警
+      - alert: MySQLExporterDown
+        expr: up{job="mysql-exporter"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "MySQL Exporter 服务下线"
+          description: "MySQL Exporter 实例 {{ $labels.instance }} 已经下线超过 2 分钟"
+
+      # Grafana 状态告警
+      - alert: GrafanaDown
+        expr: up{job="grafana"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Grafana 服务下线"
+          description: "Grafana 实例 {{ $labels.instance }} 已经下线超过 2 分钟"
+
+      # Loki 状态告警
+      - alert: LokiDown
+        expr: up{job="loki"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Loki 服务下线"
+          description: "Loki 实例 {{ $labels.instance }} 已经下线超过 2 分钟"
+
+      # Tempo 状态告警
+      - alert: TempoDown
+        expr: up{job="tempo"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Tempo 服务下线"
+          description: "Tempo 实例 {{ $labels.instance }} 已经下线超过 2 分钟" 

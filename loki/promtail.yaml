@@ -1,0 +1,73 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: ./data/positions.yaml
+
+clients:
+  - url: http://localhost:3100/loki/api/v1/push
+
+scrape_configs:
+  # 系统日志
+  - job_name: system
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: syslog
+          __path__: /var/log/syslog
+          
+  # 应用日志示例
+  - job_name: applications
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: app
+          __path__: ./logs/*.log
+
+  # Grafana 日志
+  - job_name: grafana
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: grafana
+          __path__: ../grafana/logs/*.log
+
+  # Prometheus 日志
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: prometheus
+          __path__: ../prometheus/logs/*.log
+
+  # Tempo 日志
+  - job_name: tempo
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: tempo
+          __path__: ../tempo/logs/*.log
+
+  # Loki 自身日志
+  - job_name: loki
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: loki
+          __path__: ./logs/loki.log
+
+  # Promtail 自身日志
+  - job_name: promtail
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: promtail
+          __path__: ./logs/promtail.log
