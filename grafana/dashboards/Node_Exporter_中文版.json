@@ -59,7 +59,7 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
+        "name": "注释和告警",
         "target": {
           "limit": 100,
           "matchAny": false,
@@ -103,7 +103,7 @@
       },
       "id": 261,
       "panels": [],
-      "title": "Quick CPU / Mem / Disk",
+      "title": "快速 CPU / 内存 / 磁盘",
       "type": "row"
     },
     {
@@ -111,7 +111,7 @@
         "type": "prometheus",
         "uid": "${DS_PROMETHEUS}"
       },
-      "description": "Resource pressure via PSI",
+      "description": "通过 PSI 监控资源压力",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -228,7 +228,7 @@
           "step": 240
         }
       ],
-      "title": "Pressure",
+      "title": "系统压力",
       "type": "bargauge"
     },
     {
@@ -313,7 +313,7 @@
           "step": 240
         }
       ],
-      "title": "CPU Busy",
+      "title": "CPU 繁忙",
       "type": "gauge"
     },
     {
@@ -398,7 +398,7 @@
           "step": 240
         }
       ],
-      "title": "Sys Load",
+      "title": "系统负载",
       "type": "gauge"
     },
     {
@@ -473,7 +473,7 @@
           "step": 240
         }
       ],
-      "title": "RAM Used",
+      "title": "内存使用",
       "type": "gauge"
     },
     {
@@ -556,7 +556,7 @@
           "step": 240
         }
       ],
-      "title": "SWAP Used",
+      "title": "交换空间使用",
       "type": "gauge"
     },
     {
@@ -640,7 +640,7 @@
           "step": 240
         }
       ],
-      "title": "Root FS Used",
+      "title": "根文件系统使用",
       "type": "gauge"
     },
     {
@@ -714,7 +714,7 @@
           "refId": "A"
         }
       ],
-      "title": "CPU Cores",
+      "title": "CPU 核心数",
       "type": "stat"
     },
     {
@@ -790,7 +790,7 @@
           "step": 240
         }
       ],
-      "title": "Reboot Required",
+      "title": "需要重启",
       "type": "stat"
     },
     {
@@ -870,7 +870,7 @@
           "step": 240
         }
       ],
-      "title": "Uptime",
+      "title": "运行时间",
       "type": "stat"
     },
     {
@@ -956,7 +956,7 @@
           "step": 240
         }
       ],
-      "title": "RootFS Total",
+      "title": "根文件系统总量",
       "type": "stat"
     },
     {
@@ -1036,7 +1036,7 @@
           "step": 240
         }
       ],
-      "title": "RAM Total",
+      "title": "内存总量",
       "type": "stat"
     },
     {
@@ -1116,7 +1116,7 @@
           "step": 240
         }
       ],
-      "title": "SWAP Total",
+      "title": "交换空间总量",
       "type": "stat"
     },
     {
@@ -1129,7 +1129,7 @@
       },
       "id": 263,
       "panels": [],
-      "title": "Basic CPU / Mem / Net / Disk",
+      "title": "基础 CPU / 内存 / 网络 / 磁盘",
       "type": "row"
     },
     {
@@ -1355,7 +1355,7 @@
           "step": 240
         }
       ],
-      "title": "CPU Basic",
+      "title": "CPU 基础信息",
       "type": "timeseries"
     },
     {
@@ -1565,7 +1565,7 @@
           "step": 240
         }
       ],
-      "title": "Memory Basic",
+      "title": "内存基础信息",
       "type": "timeseries"
     },
     {
@@ -1682,7 +1682,7 @@
           "step": 240
         }
       ],
-      "title": "Network Traffic Basic",
+      "title": "网络流量基础信息",
       "type": "timeseries"
     },
     {
@@ -1778,7 +1778,7 @@
           "step": 240
         }
       ],
-      "title": "Disk Space Used Basic",
+      "title": "磁盘空间使用基础信息",
       "type": "timeseries"
     },
     {
@@ -2610,7 +2610,7 @@
               "step": 240
             }
           ],
-          "title": "Memory",
+          "title": "内存",
           "type": "timeseries"
         },
         {
@@ -2731,7 +2731,7 @@
               "step": 240
             }
           ],
-          "title": "Network Traffic",
+          "title": "网络流量",
           "type": "timeseries"
         },
         {
@@ -2853,7 +2853,7 @@
               "step": 240
             }
           ],
-          "title": "Network Saturation",
+          "title": "网络饱和度",
           "type": "timeseries"
         },
         {
@@ -2972,7 +2972,7 @@
               "step": 240
             }
           ],
-          "title": "Disk IOps",
+          "title": "磁盘 IOps",
           "type": "timeseries"
         },
         {
@@ -3095,7 +3095,7 @@
               "step": 240
             }
           ],
-          "title": "Disk Throughput",
+          "title": "磁盘吞吐量",
           "type": "timeseries"
         },
         {
@@ -3218,7 +3218,7 @@
               "step": 240
             }
           ],
-          "title": "Filesystem Space Available",
+          "title": "文件系统可用空间",
           "type": "timeseries"
         },
         {
@@ -3317,7 +3317,7 @@
               "step": 240
             }
           ],
-          "title": "Filesystem Used",
+          "title": "文件系统使用量",
           "type": "timeseries"
         },
         {
@@ -3418,7 +3418,7 @@
               "step": 240
             }
           ],
-          "title": "Disk I/O Utilization",
+          "title": "磁盘 I/O 利用率",
           "type": "timeseries"
         },
         {
@@ -3596,11 +3596,11 @@
               "step": 240
             }
           ],
-          "title": "Pressure Stall Information",
+          "title": "压力阻塞信息",
           "type": "timeseries"
         }
       ],
-      "title": "CPU / Memory / Net / Disk",
+      "title": "CPU / 内存 / 网络 / 磁盘",
       "type": "row"
     },
     {
@@ -3740,7 +3740,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Committed",
+          "title": "内存提交量",
           "type": "timeseries"
         },
         {
@@ -3870,7 +3870,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Writeback and Dirty",
+          "title": "内存回写和脏页",
           "type": "timeseries"
         },
         {
@@ -3979,7 +3979,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Slab",
+          "title": "内存 Slab",
           "type": "timeseries"
         },
         {
@@ -4111,7 +4111,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Shared and Mapped",
+          "title": "内存共享和映射",
           "type": "timeseries"
         },
         {
@@ -4252,7 +4252,7 @@
               "step": 240
             }
           ],
-          "title": "Memory LRU Active / Inactive (%)",
+          "title": "内存 LRU 活跃/非活跃 (%)",
           "type": "timeseries"
         },
         {
@@ -4386,7 +4386,7 @@
               "step": 240
             }
           ],
-          "title": "Memory LRU Active / Inactive Detail",
+          "title": "内存 LRU 活跃/非活跃详情",
           "type": "timeseries"
         },
         {
@@ -4509,7 +4509,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Kernel / CPU / IO",
+          "title": "内存内核 / CPU / IO",
           "type": "timeseries"
         },
         {
@@ -4661,7 +4661,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Vmalloc",
+          "title": "内存 Vmalloc",
           "type": "timeseries"
         },
         {
@@ -4770,7 +4770,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Anonymous",
+          "title": "内存匿名页",
           "type": "timeseries"
         },
         {
@@ -4896,7 +4896,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Unevictable and MLocked",
+          "title": "内存不可回收和锁定",
           "type": "timeseries"
         },
         {
@@ -5292,7 +5292,7 @@
               "step": 240
             }
           ],
-          "title": "Memory DirectMap",
+          "title": "内存直接映射",
           "type": "timeseries"
         },
         {
@@ -5422,11 +5422,11 @@
               "step": 240
             }
           ],
-          "title": "Memory HugePages",
+          "title": "内存大页",
           "type": "timeseries"
         }
       ],
-      "title": "Memory Meminfo",
+      "title": "内存信息",
       "type": "row"
     },
     {
@@ -5557,7 +5557,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Pages In / Out",
+          "title": "内存页面换入/换出",
           "type": "timeseries"
         },
         {
@@ -5678,7 +5678,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Pages Swap In / Out",
+          "title": "内存页面交换换入/换出",
           "type": "timeseries"
         },
         {
@@ -5838,7 +5838,7 @@
               "step": 240
             }
           ],
-          "title": "Memory Page Faults",
+          "title": "内存页面错误",
           "type": "timeseries"
         },
         {
@@ -5954,11 +5954,11 @@
               "step": 240
             }
           ],
-          "title": "OOM Killer",
+          "title": "OOM 杀手",
           "type": "timeseries"
         }
       ],
-      "title": "Memory Vmstat",
+      "title": "内存虚拟统计",
       "type": "row"
     },
     {
@@ -6092,7 +6092,7 @@
               "step": 240
             }
           ],
-          "title": "Time Synchronized Drift",
+          "title": "时间同步漂移",
           "type": "timeseries"
         },
         {
@@ -6191,7 +6191,7 @@
               "step": 240
             }
           ],
-          "title": "Time PLL Adjust",
+          "title": "时间 PLL 调整",
           "type": "timeseries"
         },
         {
@@ -6325,7 +6325,7 @@
               "step": 240
             }
           ],
-          "title": "Time Synchronized Status",
+          "title": "时间同步状态",
           "type": "timeseries"
         },
         {
@@ -6435,7 +6435,7 @@
               "step": 240
             }
           ],
-          "title": "PPS Frequency / Stability",
+          "title": "PPS 频率/稳定性",
           "type": "timeseries"
         },
         {
@@ -6545,7 +6545,7 @@
               "step": 240
             }
           ],
-          "title": "PPS Time Accuracy",
+          "title": "PPS 时间精度",
           "type": "timeseries"
         },
         {
@@ -6683,11 +6683,11 @@
               "step": 240
             }
           ],
-          "title": "PPS Sync Events",
+          "title": "PPS 同步事件",
           "type": "timeseries"
         }
       ],
-      "title": "System Timesync",
+      "title": "系统时间同步",
       "type": "row"
     },
     {
@@ -6810,7 +6810,7 @@
               "step": 240
             }
           ],
-          "title": "Processes Status",
+          "title": "进程状态",
           "type": "timeseries"
         },
         {
@@ -6995,7 +6995,7 @@
               "step": 240
             }
           ],
-          "title": "Processes Detailed States",
+          "title": "进程详细状态",
           "type": "timeseries"
         },
         {
@@ -7095,7 +7095,7 @@
               "step": 240
             }
           ],
-          "title": "Processes Forks",
+          "title": "进程分叉",
           "type": "timeseries"
         },
         {
@@ -7236,7 +7236,7 @@
               "step": 240
             }
           ],
-          "title": "CPU Saturation per Core",
+          "title": "每核心 CPU 饱和度",
           "type": "timeseries"
         },
         {
@@ -7377,7 +7377,7 @@
               "step": 240
             }
           ],
-          "title": "PIDs Number and Limit",
+          "title": "PID 数量和限制",
           "type": "timeseries"
         },
         {
@@ -7518,11 +7518,11 @@
               "step": 240
             }
           ],
-          "title": "Threads Number and Limit",
+          "title": "线程数量和限制",
           "type": "timeseries"
         }
       ],
-      "title": "System Processes",
+      "title": "系统进程",
       "type": "row"
     },
     {
@@ -7642,7 +7642,7 @@
               "step": 240
             }
           ],
-          "title": "Context Switches / Interrupts",
+          "title": "上下文切换/中断",
           "type": "timeseries"
         },
         {
@@ -7802,7 +7802,7 @@
               "step": 240
             }
           ],
-          "title": "System Load",
+          "title": "系统负载",
           "type": "timeseries"
         },
         {
@@ -7993,7 +7993,7 @@
               "step": 240
             }
           ],
-          "title": "CPU Frequency Scaling",
+          "title": "CPU 频率缩放",
           "type": "timeseries"
         },
         {
@@ -8092,7 +8092,7 @@
               "step": 240
             }
           ],
-          "title": "CPU Schedule Timeslices",
+          "title": "CPU 调度时间片",
           "type": "timeseries"
         },
         {
@@ -12686,7 +12686,7 @@
           "type": "bargauge"
         }
       ],
-      "title": "Network Traffic",
+      "title": "网络流量基础信息",
       "type": "row"
     },
     {
@@ -16106,7 +16106,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Node Exporter Full",
+  "title": "Node Exporter 中文完整版",
   "uid": "rYdddlPWk",
   "version": 96,
   "weekStart": "",
