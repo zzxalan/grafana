@@ -233,6 +233,7 @@ install_all() {
     print_title "安装所有监控服务"
     
     local failed_installs=()
+    local original_dir="$(pwd)"
     
     for service in "${START_ORDER[@]}"; do
         local service_dir="$SCRIPT_DIR/$service"
@@ -242,19 +243,26 @@ install_all() {
             print_message $BLUE "安装 $service..."
             echo "----------------------------------------"
             
-            cd "$service_dir"
-            if ! ./install.sh; then
+            # 使用子shell执行安装，避免路径污染
+            (
+                cd "$service_dir" || exit 1
+                ./install.sh
+            )
+            
+            if [ $? -ne 0 ]; then
                 failed_installs+=("$service")
                 print_message $RED "错误: $service 安装失败"
             else
                 print_message $GREEN "✓ $service 安装成功"
             fi
-            cd "$SCRIPT_DIR"
             echo ""
         else
             print_message $YELLOW "警告: $service 安装脚本不存在: $install_script"
         fi
     done
+    
+    # 确保返回到原始目录
+    cd "$original_dir" || true
     
     if [ ${#failed_installs[@]} -eq 0 ]; then
         print_message $GREEN "✓ 所有服务安装成功！"
